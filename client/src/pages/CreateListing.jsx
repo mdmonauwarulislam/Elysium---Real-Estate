@@ -93,6 +93,7 @@ export const CreateListing = () => {
                 (snapshot) => {
                     const progress =
                         (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                        console.log(`Upload is ${progress}% done`);
                 },
                 (error) => {
                     reject(error);
@@ -357,7 +358,7 @@ export const CreateListing = () => {
                             className="border p-3 border-gray-300 rounded w-full "
                             type="file"
                             id="images"
-                            accept="images/*"
+                            accept="image/*"
                             multiple
                         />
                         <button

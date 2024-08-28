@@ -20,7 +20,7 @@ import {
   signOutUserStart,
   signOutUserFailure,
   signOutUserSuccess,
-} from "../resux/user/userSlice.js";
+} from "../redux/User/userSlice.js";
 
 import { useDispatch } from "react-redux";
 

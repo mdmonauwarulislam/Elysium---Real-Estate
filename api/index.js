@@ -10,7 +10,7 @@ dotenv.config();
 
 //I need apllication string
 mongoose
-  .connect(process.env.MONGO)
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     console.log("Connected to MongoDB!");
   })
@@ -28,8 +28,9 @@ const corsOptions = {
   origin: true,
 };
 app.use(cors(corsOptions));
-app.listen(3000, () => {
-  console.log(`Server is running on port 3000!!`);
+const port = process.env.PORT || 5000
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
 //api route
