@@ -39,7 +39,9 @@ export const CreateListing = () => {
     const [loading, setLoading] = useState(false);
 
     const handleImageSubmit = (e) => {
-        //e.preventDefault -> for submiting a form
+        e.preventDefault();
+        console.log(files);
+        
 
         if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
             //limit number of photos 6
@@ -57,15 +59,18 @@ export const CreateListing = () => {
             Promise.all(promises)
                 .then((urls) => {
                     // Update formData with uploaded image URLs
-                    setFormData({
+                    setFormData( formData => ({
                         ...formData,
                         imageUrls: formData.imageUrls.concat(urls),
-                    });
+                    }));
+                    setFiles([]);  // Clear file input
                     setImageUploadError(false);
                     setUploading(false);
+                    
                 })
 
                 .catch((error) => {
+                    console.error("Error uploading images:", error.message);
                     setImageUploadError("Imagae upload failed");
                     setUploading(false);
                     // Handle errors here if needed
@@ -96,6 +101,7 @@ export const CreateListing = () => {
                         console.log(`Upload is ${progress}% done`);
                 },
                 (error) => {
+                    console.log("Uploadfile",error);
                     reject(error);
                 },
                 () => {

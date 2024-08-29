@@ -43,6 +43,14 @@ export default function Profile() {
   const dispatch = useDispatch();
 
   const handleFileUpload = (file) => {
+    if (!file) return; // Added check to avoid processing if no file
+
+    if (file.size > 2 * 1024 * 1024) {
+      // Check if the file size is greater than 2 MB
+      setFileUploadError(true);
+      console.error("File is too large. Max size is 2 MB.");
+      return;
+    }
     // this app from firebase.js
     const storage = getStorage(app);
     // to get a unique file name
@@ -200,7 +208,7 @@ export default function Profile() {
           ref={fileRef}
           type="file"
           hidden
-          accept="images/*"
+          accept="image/*"
           onChange={(e) => setFile(e.target.files[0])}
         />
         {/* input and image are connected - I can update image from photo*/}

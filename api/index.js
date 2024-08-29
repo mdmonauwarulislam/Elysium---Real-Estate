@@ -28,6 +28,7 @@ const corsOptions = {
   origin: true,
 };
 app.use(cors(corsOptions));
+
 const port = process.env.PORT || 5000
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
@@ -40,6 +41,9 @@ app.listen(port, () => {
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
+
+
+
 
 //middleware-I use it in auth.controller
 app.use((err, req, res, next) => {
