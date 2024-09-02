@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { IoMdMenu , IoMdClose} from "react-icons/io";
+import logo from "../assets/public/logo.png";
 
 //i will redirect th the page without refreshing the page
 export default function Header() {
@@ -38,12 +39,10 @@ export default function Header() {
     setMenuOpen(false);
   };
   return (
-    <header className="shadow-md bg-gradient-to-r from-[#606c38] via-[#283618] to-[#606c38] py-2">
+    <header className="shadow-md bg-gradient-to-r from-[#606c38] via-[#283618] to-[#606c38]">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/">
-          <h1 className="font-bold text-sm sm:tex-xl flex flex-wrap">
-            <span className="text-orange-500 text-4xl">ELYSIUM</span>
-          </h1>
+          <img src={logo} alt="logo" className="cursor-pointer h-16" />
         </Link>
         <form
           onSubmit={handleSubmit}

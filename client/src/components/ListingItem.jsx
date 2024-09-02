@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
-import { MdLocationOn } from "react-icons/md";
-import imgCover from "../assets/logo.jpg";
-export const ListingItem = ({ listing }) => {
+import { Link } from 'react-router-dom';
+import { MdLocationOn } from 'react-icons/md';
+import imgCover from '../assets/logo.jpg';
+
+export default function ListingItem({ listing }) {
     return (
         <div className="bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden rounded-sm w-full sm:w-[330px]">
             <Link to={`/listing/${listing._id}`}>
@@ -25,9 +26,9 @@ export const ListingItem = ({ listing }) => {
                     <p className="text-slate-700 font-bold">
                         $
                         {listing.offer
-                            ? listing.discountPrice.toLocaleString("en-US")
-                            : listing.regularPrice.toLocaleString("en-US")}
-                        {listing.type === "rent" && "/month"}
+                            ? listing.discountPrice.toLocaleString('en-US')
+                            : listing.regularPrice.toLocaleString('en-US')}
+                        {listing.type === 'rent' && '/month'}
                     </p>
                     <div className="text-slate-700 flex gap-4">
                         <div className="font-bold text-xs">
@@ -45,4 +46,4 @@ export const ListingItem = ({ listing }) => {
             </Link>
         </div>
     );
-};
+}
