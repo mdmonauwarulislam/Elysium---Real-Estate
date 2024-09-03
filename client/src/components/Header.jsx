@@ -70,6 +70,9 @@ export default function Header() {
             <Link to="/about">
               <li className="text-xl hover:underline cursor-pointer">About</li>
             </Link>
+            <Link to="/listings">
+              <li className="text-xl hover:underline cursor-pointer">Listings</li>
+            </Link>
             <Link to="/profile">
               {currentUser ? (
                 <img
@@ -108,6 +111,9 @@ export default function Header() {
               </Link>
               <Link to="/about" onClick={closeMenu}>
                 <li className="text-xl hover:underline cursor-pointer">About</li>
+              </Link>
+              <Link to="/listings" onClick={closeMenu}>
+                <li className="text-xl hover:underline cursor-pointer">Listings</li>
               </Link>
             </ul>
           )}
