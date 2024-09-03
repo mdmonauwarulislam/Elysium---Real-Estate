@@ -52,6 +52,7 @@ export const CreateListing = () => {
           setImageUploadError(false);
           setUploading(false);
         })
+        // eslint-disable-next-line no-unused-vars
         .catch((err) => {
           setImageUploadError('Image upload failed (2 MB max per image)');
           setUploading(false);
