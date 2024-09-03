@@ -1,3 +1,7 @@
+# Environment files
+.env
+client/.env
+
 # Logs
 logs
 *.log
@@ -7,12 +11,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Build and distribution directories
 node_modules
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Editor and IDE directories
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -23,5 +28,4 @@ dist-ssr
 *.sln
 *.sw?
 
-.env
-
+# Other files and directories
