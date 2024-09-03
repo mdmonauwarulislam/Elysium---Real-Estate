@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
@@ -21,7 +21,6 @@ export const ListingsPage = () => {
     startIndex: 0,
   });
 
-  const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
     const fetchListings = async () => {
@@ -113,10 +112,20 @@ export const ListingsPage = () => {
             />
             <div className="p-4">
               <p className="text-xl font-bold">
-                {listing.name} - $
-                {listing.offer
-                  ? listing.discountPrice.toLocaleString("en-US")
-                  : listing.regularPrice.toLocaleString("en-US")}
+                {listing.name} - ₹
+                {listing.offer ? (
+                                <>
+                                    <span className="line-through text-gray-500 px-2">
+                                        {listing.regularPrice.toLocaleString("en-IN")}
+                                    </span> 
+                                    
+                                    <span className="text-green-800 mr-3">
+                                        {(+listing.regularPrice - +listing.discountPrice).toLocaleString("en-IN")}
+                                    </span>
+                                </>
+                            ) : (
+                                listing.regularPrice.toLocaleString("en-IN")
+                            )}
               </p>
               <p className="flex items-center gap-2 text-sm text-slate-600">
                 <FaMapMarkerAlt className="text-green-700" />
