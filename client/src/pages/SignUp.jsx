@@ -15,7 +15,7 @@ export default function SignUp() {
             [e.target.id]: e.target.value,
         });
     };
-    console.log(formData);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,8 +31,6 @@ export default function SignUp() {
             });
 
             const data = await res.json();
-
-            console.log(data);
 
             if (data.success === false) {
                 setLoading(false);

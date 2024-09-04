@@ -41,7 +41,6 @@ export default function Profile() {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingError, setShowListingError] = useState(false);
   const [userListings, setUserListings] = useState([]);
-  console.log(userListings);
   const dispatch = useDispatch();
 
   const handleFileUpload = (file) => {
@@ -151,11 +150,9 @@ export default function Profile() {
 
       if (!Array.isArray(data)) {
         setShowListingError(true);
-        console.error("Data is not an array:", data); // Log if data is not an array
         return;
       }
       setUserListings(data);
-      console.log("User listings updated:", userListings);
     } catch (error) {
       setShowListingError(true);
       console.error("Error fetching listings:", error);
@@ -171,7 +168,6 @@ export default function Profile() {
       const data = await res.json();
 
       if (data.success === false) {
-        console.log(data.message);
         return;
       }
 
@@ -241,13 +237,13 @@ export default function Profile() {
           onChange={handleChange}
           id="email"
         />
-        <input
+        {/* <input
           type="password"
           placeholder="password"
           className="border p-3 rounded-lg"
           id="password"
           onChange={handleChange}
-        />
+        /> */}
         <button
           disabled={loading}
           className="bg-slate-700 text-white p-3 uppercase hover:opacity-90 rounded-lg disabled:opacity-80 "

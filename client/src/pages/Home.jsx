@@ -16,7 +16,7 @@ const Home = () => {
           throw new Error('Failed to fetch listings');
         }
         const data = await response.json();
-        console.log('Fetched Data:', data); // Debugging line
+       
 
         // Ensure the listings array is correctly set
         setListings(data || []); // Adjust based on actual API response structure

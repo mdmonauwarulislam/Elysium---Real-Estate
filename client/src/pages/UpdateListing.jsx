@@ -33,7 +33,6 @@ import {
       parking: false,
       furnished: false,
     });
-    console.log(formData);
     const [imageUploadError, setImageUploadError] = useState(false);
   
     const [uploading, setUploading] = useState(false);
@@ -49,7 +48,6 @@ import {
         const data = await res.json();
   
         if (data.success === false) {
-          console.log(data.message);
           return;
         }
   
