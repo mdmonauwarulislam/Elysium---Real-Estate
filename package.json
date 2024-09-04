@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node api/index.js",
     "dev": "node api/index.js",
-     "build": "npm install && echo 'Dependencies installed, no build step required for API'"
+    "build": "npm install --prefix api && npm install --prefix client && npm run build --prefix client"
   },
   "author": "Md Monauwarul Islam",
   "license": "ISC",
