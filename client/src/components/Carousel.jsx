@@ -72,7 +72,7 @@ const Carousel = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center  p-4 text-white ">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-9xl font-bold md:mb-4 mb-2 font-montserrat tracking-wide text-center top-1/2 xl:mt-52 lg:mt-48 md:mt-24 mt-12 sm:mt-16">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-bold md:mb-4 mb-2 font-montserrat tracking-wide text-center top-1/2 xl:mt-52 lg:mt-48 md:mt-24 mt-12 sm:mt-16">
               Welcome to <span className="text-transparent bg-gradient-to-br from-yellow-300 via-yellow-600 to-yellow-900 bg-clip-text font-extrabold tracking-widest">Elysium</span>
             </h1>
             <p className="text-[10px] sm:text-[10px] md:text-lg lg:text-xl md:mb-4 mb-2 font-monteserrat text-center">
