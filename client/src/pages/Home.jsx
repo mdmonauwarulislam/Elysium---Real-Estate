@@ -16,7 +16,7 @@ const Home = () => {
           throw new Error('Failed to fetch listings');
         }
         const data = await response.json();
-       
+
 
         // Ensure the listings array is correctly set
         setListings(data || []); // Adjust based on actual API response structure
@@ -42,10 +42,11 @@ const Home = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-zinc-800">Featured Properties</h2>
             <Link
               to="/listings"
-              className="text-blue-600 hover:underline text-lg font-semibold"
+              className="bg-gradient-to-br from-pink-300 via-purple-300 to-yellow-200 text-gray-800 hover:bg-gradient-to-lr focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-offset-2 font-semibold text-lg px-6 py-2 rounded-lg shadow-md transition duration-300"
             >
-              View All Listings
+              View All
             </Link>
+
           </div>
           {loading ? (
             <p className="text-center">Loading...</p>
@@ -69,18 +70,18 @@ const Home = () => {
                       <p className="text-xl font-bold">
                         {listing.name} - ₹
                         {listing.offer ? (
-                                <>
-                                    <span className="line-through text-gray-500 px-2">
-                                        {listing.regularPrice.toLocaleString("en-IN")}
-                                    </span> 
-                                    
-                                    <span className="text-green-800 mr-3">
-                                        {(+listing.regularPrice - +listing.discountPrice).toLocaleString("en-IN")}
-                                    </span>
-                                </>
-                            ) : (
-                                listing.regularPrice.toLocaleString("en-IN")
-                            )}
+                          <>
+                            <span className="line-through text-gray-500 px-2">
+                              {listing.regularPrice.toLocaleString("en-IN")}
+                            </span>
+
+                            <span className="text-green-800 mr-3">
+                              {(+listing.regularPrice - +listing.discountPrice).toLocaleString("en-IN")}
+                            </span>
+                          </>
+                        ) : (
+                          listing.regularPrice.toLocaleString("en-IN")
+                        )}
                       </p>
                       <p className="flex items-center gap-2 text-sm text-slate-600">
                         <FaMapMarkerAlt className="text-green-700" />

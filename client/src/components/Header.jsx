@@ -74,6 +74,7 @@ export default function Header() {
             <Link to="/listings">
               <li className="text-xl hover:underline cursor-pointer">Listings</li>
             </Link>
+            
             <Link to="/profile">
               {currentUser ? (
                 <img

@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         'noto-serif': ['Noto Serif', 'serif'],
         'lobster': ['Lobster', 'cursive'],
+        'montserrat': ['Montserrat', 'sans-serif'],
       },
       colors: {
         whiteray: '#f1faee', // Primary Color
