@@ -34,7 +34,7 @@ app.use(cookieParser());
 
 // CORS configuration
 const corsOptions = {
-  origin: true,
+  origin: "*",
 };
 app.use(cors(corsOptions));
 
