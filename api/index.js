@@ -7,7 +7,7 @@ import authRouter from "./routes/auth.route.js";
 import listingRouter from "./routes/listing.route.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import path from "path";
+
 
 dotenv.config();
 
@@ -24,7 +24,7 @@ mongoose
     console.error("Failed to connect to MongoDB:", err);
   });
 
-const __dirname = path.resolve();
+
 
 const app = express();
 
@@ -44,12 +44,8 @@ app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 
 // Serve static files from the 'client/dist' directory
-app.use(express.static(path.join(__dirname, "client", "dist")));
 
 // Serve the frontend app
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
