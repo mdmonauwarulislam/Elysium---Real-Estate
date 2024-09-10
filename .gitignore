@@ -13,8 +13,7 @@ lerna-debug.log*
 
 # Build and distribution directories
 node_modules
-dist
-dist-ssr
+
 *.local
 
 # Editor and IDE directories

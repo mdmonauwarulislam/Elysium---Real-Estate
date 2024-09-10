@@ -16,7 +16,7 @@ export default function OAuth() {
       const result = await signInWithPopup(auth, provider);
 
       //I need to create api-api side
-      const res = await fetch("/api/auth/google", {
+      const res = await fetch(`${import.meta.env.VITE_API}/api/auth/google`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

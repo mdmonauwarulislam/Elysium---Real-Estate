@@ -27,7 +27,7 @@ export const ListingsPage = () => {
       try {
         setLoading(true);
         const queryString = new URLSearchParams(filters).toString();
-        const res = await fetch(`/api/listing/get?${queryString}`);
+        const res = await fetch(`${import.meta.env.VITE_API}/api/listing/get?${queryString}`);
         const data = await res.json();
 
         if (!res.ok) {
