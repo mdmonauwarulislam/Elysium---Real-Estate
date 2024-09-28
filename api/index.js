@@ -40,7 +40,7 @@ app.use(cors(corsOptions));
 
 // API routes
 app.use("/api/user", userRouter);
-app.use("/api/auth", authRouter);
+app.use("/", authRouter);
 app.use("/api/listing", listingRouter);
 
 // Serve static files from the 'client/dist' directory
